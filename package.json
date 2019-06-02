@@ -1,0 +1,38 @@
+{
+  "name": "electron-project",
+  "version": "1.0.0",
+  "description": "Cross Platform Desktop Application",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "pack": "build --dir",
+    "dist": "build"
+  },
+  "repository": "https://github.com/arjunkhetia/Electron-Project",
+  "keywords": [
+    "Electron",
+    "Platform",
+    "Desktop",
+    "Application",
+    "Template"
+  ],
+  "author": "Arjun_Khetia <arjunkhetia@gmail.com>",
+  "devDependencies": {
+    "electron": "^5.0.2",
+    "electron-builder": "^20.41.0"
+  },
+  "build": {
+    "linux": {
+      "appId": "com.archangel.app",
+      "category": "utility",
+      "icon": "./build/icons/*.png",
+      "target": [
+        "AppImage",
+        "deb"
+      ],
+      "depends": [
+        "gconf2", "gconf-service", "libnotify4", "libappindicator1", "libxtst6", "libnss3"
+      ]
+    }
+  }
+}
