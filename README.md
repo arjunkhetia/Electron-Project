@@ -47,8 +47,10 @@ A complete solution to package and build a ready for distribution Electron app f
 
 ```js
 "build": {
+  "appId": "com.archangel.app",
+  "productName": "Application",
+  "copyright": "Copyright © 2019 Arjun Khetia",
   "linux": {
-    "appId": "com.archangel.app",
     "category": "utility",
     "icon": "./build/icons/*.png",
     "target": [
@@ -62,10 +64,37 @@ A complete solution to package and build a ready for distribution Electron app f
 }
 ```
 
+For macOS:
+
+```js
+"build": {
+  "appId": "com.archangel.app",
+  "productName": "Application",
+  "copyright": "Copyright © 2019 Arjun Khetia",
+  "mac": {
+    "category": "public.app-category.utilities",
+    "target": "default"
+  }
+}
+```
+
 For building execute this command:
 
 ```bash
 $ npm run dist
+```
+
+# Electron-Updater
+
+This module allows you to automatically update your application. To publish your updates you just need simple file hosting, it does not require a dedicated server.
+
+```js
+const { autoUpdater } = require("electron-updater")
+
+// set auto download option for auto updater
+autoUpdater.autoDownload = false;
+
+autoUpdater.checkForUpdatesAndNotify();
 ```
 
 [version-image]: https://img.shields.io/badge/Version-1.0.0-orange.svg

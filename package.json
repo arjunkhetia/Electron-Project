@@ -6,9 +6,13 @@
   "scripts": {
     "start": "electron .",
     "pack": "build --dir",
-    "dist": "build"
+    "dist": "build",
+    "release": "build"
   },
-  "repository": "https://github.com/arjunkhetia/Electron-Project",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/arjunkhetia/Electron-Project.git"
+  },
   "keywords": [
     "Electron",
     "Platform",
@@ -16,14 +20,19 @@
     "Application",
     "Template"
   ],
-  "author": "Arjun_Khetia <arjunkhetia@gmail.com>",
+  "author": "arjunkhetia <arjunkhetia@gmail.com>",
+  "dependencies": {
+    "electron-updater": "^4.0.6"
+  },
   "devDependencies": {
     "electron": "^5.0.2",
     "electron-builder": "^20.41.0"
   },
   "build": {
+    "appId": "com.archangel.app",
+    "productName": "Application",
+    "copyright": "Copyright © 2019 Arjun Khetia",
     "linux": {
-      "appId": "com.archangel.app",
       "category": "utility",
       "icon": "./build/icons/*.png",
       "target": [
@@ -31,8 +40,20 @@
         "deb"
       ],
       "depends": [
-        "gconf2", "gconf-service", "libnotify4", "libappindicator1", "libxtst6", "libnss3"
+        "gconf2",
+        "gconf-service",
+        "libnotify4",
+        "libappindicator1",
+        "libxtst6",
+        "libnss3"
       ]
-    }
+    },
+    "mac": {
+      "category": "public.app-category.utilities",
+      "target": "default"
+    },
+    "publish": [
+      "github"
+    ]
   }
 }

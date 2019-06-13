@@ -11,7 +11,11 @@
       We are using Node.js <script>document.write(process.versions.node)</script>,
       Chromium <script>document.write(process.versions.chrome)</script>,
       and Electron <script>document.write(process.versions.electron)</script>.
-      <br /><br /><br />
+      <br /><br />
+      <p>
+        Current version: <span id="version"></span>
+      </p>
+      <br /><br />
       <input type="text" id="i1">
       <button type="submit" onClick="document.getElementById('p1').innerHTML = document.getElementById('i1').value">Print</button>
       <p id="p1"></p>
