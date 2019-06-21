@@ -43,7 +43,42 @@ You can learn more about each of these components within the [Quick Start Guide]
 
 # Electron-Builder
 
-A complete solution to package and build a ready for distribution Electron app for macOS, Windows and Linux with “auto update” support out of the box. For Linux Target:
+A complete solution to package and build a ready for distribution Electron app for Windows, Linux and macOS with “auto update” support out of the box.
+
+For Windows :
+
+```js
+"build": {
+  "appId": "com.archangel.app",
+  "productName": "Application",
+  "copyright": "Copyright © 2019 Arjun Khetia",
+  "win": {
+    "target": [
+      "nsis",
+      "portable",
+      "msi"
+    ]
+  },
+  "nsis": {
+    "oneClick": false,
+    "allowElevation": true,
+    "allowToChangeInstallationDirectory": true,
+    "createDesktopShortcut": true,
+    "createStartMenuShortcut": true,
+    "menuCategory": true,
+    "multiLanguageInstaller": true,
+    "displayLanguageSelector": true,
+    "installerLanguages": [
+      "en_US",
+      "de_DE"
+    ],
+    "installerIcon": "./build/installerIcon.ico",
+    "uninstallerIcon": "./build/uninstallerIcon.ico"
+  }
+}
+```
+
+For Linux :
 
 ```js
 "build": {
@@ -64,7 +99,7 @@ A complete solution to package and build a ready for distribution Electron app f
 }
 ```
 
-For macOS:
+For macOS :
 
 ```js
 "build": {

@@ -33,9 +33,13 @@
     "productName": "Application",
     "copyright": "Copyright © 2019 Arjun Khetia",
     "win": {
-      "target": "NSIS"
+      "target": [
+        "nsis",
+        "portable",
+        "msi"
+      ]
     },
-    "NSIS": {
+    "nsis": {
       "oneClick": false,
       "allowElevation": true,
       "allowToChangeInstallationDirectory": true,
