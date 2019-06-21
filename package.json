@@ -33,7 +33,23 @@
     "productName": "Application",
     "copyright": "Copyright © 2019 Arjun Khetia",
     "win": {
-      "target": "nsis"
+      "target": "NSIS"
+    },
+    "NSIS": {
+      "oneClick": false,
+      "allowElevation": true,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "menuCategory": true,
+      "multiLanguageInstaller": true,
+      "displayLanguageSelector": true,
+      "installerLanguages": [
+        "en_US",
+        "de_DE"
+      ],
+      "installerIcon": "./build/installerIcon.ico",
+      "uninstallerIcon": "./build/uninstallerIcon.ico"
     },
     "linux": {
       "category": "utility",
