@@ -1,4 +1,4 @@
-# Electron Project - 5.0.2   ![Version][version-image]
+# Electron Project - 5.0.7   ![Version][version-image]
 
 ![Linux Build][linuxbuild-image]
 ![Windows Build][windowsbuild-image]
@@ -113,7 +113,7 @@ For macOS :
 }
 ```
 
-For building execute this command:
+For building app execute this command:
 
 ```bash
 $ npm run dist
@@ -129,7 +129,32 @@ const { autoUpdater } = require("electron-updater")
 // set auto download option for auto updater
 autoUpdater.autoDownload = false;
 
+// check for available updates
 autoUpdater.checkForUpdatesAndNotify();
+
+autoUpdater.on('checking-for-update', () => {
+  // Emitted when checking if an update has started
+})
+
+autoUpdater.on('update-available', () => {
+  // Emitted when there is an available update. The update is downloaded automatically if autoDownload is true.
+})
+
+autoUpdater.on('update-not-available', () => {
+  // Emitted when there is no available update.
+})
+
+autoUpdater.on('download-progress', () => {
+  // Emitted while downloading the updates.
+})
+
+autoUpdater.on('update-downloaded', () => {
+  // Emitted when an update has been downloaded.
+})
+
+autoUpdater.on('error', () => {
+  // Emitted when there is an error while updating.
+})
 ```
 
 [version-image]: https://img.shields.io/badge/Version-1.0.0-orange.svg

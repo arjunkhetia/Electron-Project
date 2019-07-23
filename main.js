@@ -10,6 +10,20 @@ let mainWindow
 autoUpdater.autoDownload = false;
 
 function createWindow () {
+  // create a new `splash`-Window
+  splash = new BrowserWindow({
+    width: 400,
+    height: 300,
+    transparent: true,
+    alwaysOnTop: true,
+    frame: false,
+    center: true,
+    resizable: false,
+    titleBarStyle: 'customButtonsOnHover'
+  });
+
+  splash.loadURL(`file://${__dirname}/splash.html`);
+
   // Create the browser window
   mainWindow = new BrowserWindow({
     width: 800,
@@ -28,7 +42,10 @@ function createWindow () {
 
   // Event will be emitted when the renderer process has rendered the page for the first time
   mainWindow.once('ready-to-show', () => {
-    mainWindow.show();
+    setTimeout(() => {
+      splash.destroy();
+      mainWindow.show();
+    }, 5000);
   })
 
   mainWindow.webContents.on('did-finish-load', () => {
